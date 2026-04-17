@@ -1,0 +1,27 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" android:orientation="vertical"
+    android:background="@color/background">
+
+    <!-- Zone 1 : le HeaderFragment réutilisable -->
+    <fragment android:id="@+id/headerFragment"
+        android:name="com.example.bankapp.HeaderFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <!-- Zone 2 : titre de la section -->
+    <TextView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mes transactions" android:textSize="16sp"
+        android:textStyle="bold" android:textColor="@color/primary"
+        android:padding="@dimen/marge_standard" />
+
+    <!-- Zone 3 : la ListView -->
+    <ListView android:id="@+id/lvTransactions"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="8dp"
+        android:padding="@dimen/marge_standard" />
+</LinearLayout>

@@ -1,0 +1,124 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="@dimen/marge_large"
+    android:background="@color/background">
+
+    <!-- Espace en haut pour descendre un peu le contenu -->
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="32dp" />
+
+    <!-- Logo Circulaire "B" -->
+    <TextView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:text="B"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:textColor="@color/primary"
+        android:gravity="center"
+        android:background="@drawable/bg_logo_circle"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Titre -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/login_titre"
+        android:textSize="@dimen/texte_titre"
+        android:textColor="@color/primary"
+        android:textStyle="bold"
+        android:layout_marginBottom="4dp" />
+
+    <!-- Sous-titre -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/login_sous_titre"
+        android:textSize="@dimen/texte_sous_titre"
+        android:textColor="@color/text_secondary"
+        android:layout_marginBottom="32dp" />
+
+    <!-- Identifiant -->
+    <EditText android:id="@+id/etIdentifiant"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="@string/hint_identifiant"
+        android:inputType="textEmailAddress"
+        android:background="@drawable/bg_edittext"
+        android:paddingHorizontal="16dp"
+        android:layout_marginBottom="16dp" />
+
+    <EditText android:id="@+id/etEmail"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="@string/hint_email"
+        android:inputType="textEmailAddress"
+        android:background="@drawable/bg_edittext"
+        android:paddingHorizontal="16dp"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Mot de passe -->
+    <EditText android:id="@+id/etMotDePasse"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="@string/hint_mot_de_passe"
+        android:inputType="textPassword"
+        android:background="@drawable/bg_edittext"
+        android:paddingHorizontal="16dp"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Checkbox se rappeler de moi alignée à gauche -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="16dp"
+        android:orientation="horizontal">
+
+        <CheckBox android:id="@+id/cbRappeler"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cb_rappeler"
+            android:textColor="@color/text_secondary" />
+    </LinearLayout>
+
+    <TextView android:id="@+id/tvErreur"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/error"
+        android:textSize="@dimen/texte_corps"
+        android:gravity="center"
+        android:visibility="gone"
+        android:layout_marginBottom="16dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnConnexion"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="@string/btn_connexion"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:cornerRadius="8dp"
+        app:backgroundTint="@color/primary"
+        android:layout_marginBottom="32dp" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LoginActivity\nactivity_login.xml"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:textColor="@color/text_secondary"
+        android:layout_marginBottom="16dp"/>
+
+</LinearLayout>

@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">BankApp</string>
+    <string name="login_titre">BankApp</string>
+    <string name="login_sous_titre">Accédez à vos comptes</string>
+    <string name="hint_identifiant">Identifiant</string>
+    <string name="hint_mot_de_passe">Mot de passe</string>
+    <string name="cb_rappeler">Se rappeler de moi</string>
+    <string name="btn_connexion">Se connecter</string>
+    <string name="erreur_champs_vides">Veuillez remplir tous les champs.</string>
+    <string name="erreur_mdp_court">Le mot de passe doit contenir au moins 6 caractères.</string>
+    <string name="erreur_identifiants">Identifiant ou mot de passe incorrect.</string>
+    <string name="accueil_bienvenue">Bonjour, %s</string>
+    <string name="carte_transactions">Consulter\nles transactions</string>
+    <string name="carte_recherche">Rechercher\nune transaction</string>
+    <string name="carte_virement">Nouveau\nvirement</string>
+    <string name="carte_comptes">Mes\ncomptes</string>
+    <string name="carte_stats">Statistiques</string>
+    <string name="carte_params">Paramètres</string>
+    <string name="toast_a_venir">Fonctionnalité à venir</string>
+    <string name="hint_email">Email</string>
+    <string name="erreur_email_invalide">Veuillez saisir un email valide (avec @).</string>
+    <string name="erreur_trop_tentatives">Trop d\'échecs. Réessayez dans %1$d s.</string>
+    <string name="apropos_titre">À propos</string>
+    <string name="apropos_app">Nom de l’app</string>
+    <string name="apropos_version">Version</string>
+    <string name="apropos_auteur">Auteur</string>
+    <string name="apropos_utilisateur">Utilisateur connecté</string>
+    <string name="apropos_nom_auteur">Tahal</string>
+    <string name="apropos_retour">Retour</string>
+    <string name="apropos_app_value">%1$s : %2$s</string>
+    <string name="apropos_version_value">%1$s : %2$s</string>
+    <string name="apropos_auteur_value">%1$s : %2$s</string>
+    <string name="apropos_utilisateur_value">%1$s : %2$s</string>
+    <string name="apropos_utilisateur_inconnu">Invité</string>
+    <string name="apropos_version_inconnue">Inconnue</string>
+
+    <string name="btn_deconnexion">Déconnexion</string>
+    <string name="desc_transactions">Icône transactions</string>
+    <string name="desc_recherche">Icône recherche</string>
+    <string name="desc_virement">Icône virement</string>
+    <string name="desc_comptes">Icône comptes</string>
+    <string name="desc_stats">Icône statistiques</string>
+    <string name="desc_params">Icône paramètres</string>
+
+</resources>

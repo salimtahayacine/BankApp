@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="marge_standard">16dp</dimen>
+    <dimen name="marge_large">24dp</dimen>
+    <dimen name="texte_titre">28sp</dimen>
+    <dimen name="texte_sous_titre">16sp</dimen>
+    <dimen name="texte_corps">14sp</dimen>
+    <dimen name="texte_carte">14sp</dimen>
+    <dimen name="card_radius">12dp</dimen>
+    <dimen name="card_elevation">4dp</dimen>
+    <dimen name="card_padding">16dp</dimen>
+</resources>

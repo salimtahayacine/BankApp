@@ -1,0 +1,38 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background">
+    <TextView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Services" android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/primary"
+        android:padding="@dimen/marge_large" />
+    <Button android:id="@+id/btnAppeler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Appeler la banque"
+        android:layout_margin="@dimen/marge_standard" />
+    <Button android:id="@+id/btnSms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Envoyer un SMS"
+        android:layout_marginStart="@dimen/marge_standard"
+        android:layout_marginEnd="@dimen/marge_standard"
+        android:layout_marginBottom="@dimen/marge_standard" />
+    <Button android:id="@+id/btnEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Envoyer un email"
+        android:layout_marginStart="@dimen/marge_standard"
+        android:layout_marginEnd="@dimen/marge_standard"
+        android:layout_marginBottom="@dimen/marge_standard" />
+    <Button android:id="@+id/btnLocaliser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Localiser l\'agence"
+        android:layout_marginStart="@dimen/marge_standard"
+        android:layout_marginEnd="@dimen/marge_standard" />
+</LinearLayout>

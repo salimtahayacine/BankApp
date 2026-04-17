@@ -1,0 +1,51 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background">
+    <fragment android:id="@+id/headerFragment"
+        android:name="com.example.bankapp.HeaderFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nouveau virement"
+        android:textSize="16sp" android:textStyle="bold"
+        android:textColor="@color/primary"
+        android:padding="@dimen/marge_standard" />
+
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/marge_standard">
+        <EditText android:id="@+id/etBeneficiaire"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nom du bénéficiaire"
+            android:inputType="text"
+            android:layout_marginBottom="12dp" />
+        <EditText android:id="@+id/etMontant"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Montant (MAD)"
+            android:inputType="numberDecimal"
+            android:layout_marginBottom="12dp" />
+        <EditText android:id="@+id/etMotif"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Motif du virement"
+            android:inputType="text"
+            android:layout_marginBottom="12dp" />
+        <TextView android:id="@+id/tvErreurVirement"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/error"
+            android:visibility="gone"
+            android:layout_marginBottom="8dp" />
+        <Button android:id="@+id/btnVirement"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Effectuer le virement" />
+
+    </LinearLayout>
+</LinearLayout>
