@@ -11,7 +11,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     // Nom et version de la base
     private static final String DB_NAME = "bankapp.db";
-    private static final int DB_VERSION = 1;
+    private static final int DB_VERSION = 2; // Incremented version
 
     // Table transactions
     private static final String TABLE_TRANSACTIONS = "transactions";
@@ -20,6 +20,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String COL_LIBELLE = "libelle";
     private static final String COL_MONTANT = "montant";
 
+    // Table comptes
+    private static final String TABLE_COMPTES = "comptes";
+    private static final String COL_COMPTE_NUMERO = "numero";
+    private static final String COL_COMPTE_LIBELLE = "compte_libelle";
+    private static final String COL_COMPTE_SOLDE = "solde";
+
     public DatabaseHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
     }
@@ -27,6 +33,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+
+        // Créer la table comptes
+        String sqlComptes = "CREATE TABLE " + TABLE_COMPTES + " ("
+                + COL_COMPTE_NUMERO + " TEXT PRIMARY KEY, "
+                + COL_COMPTE_LIBELLE + " TEXT, "
+                + COL_COMPTE_SOLDE + " REAL)";
+        db.execSQL(sqlComptes);
+
+        // Insérer des comptes initiaux
+        insererCompte(db, "0011-2233-4455-6677", "Compte courant", 8250.00);
+        insererCompte(db, "0011-2233-4455-8899", "Compte épargne", 3700.00);
+        insererCompte(db, "0011-2233-4455-1100", "Compte sur carnet", 500.00);
 
         // Créer la table transactions
         String sql = "CREATE TABLE " + TABLE_TRANSACTIONS + " ("
@@ -45,6 +63,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         insererTransaction(db, "05/03/2025", "Restaurant", -180.00);
         insererTransaction(db, "03/03/2025", "Essence", -350.00);
         insererTransaction(db, "01/03/2025", "Prime trimestrielle", 2500.00);
+    }
+
+    private void insererCompte(SQLiteDatabase db, String numero, String libelle, double solde) {
+        ContentValues values = new ContentValues();
+        values.put(COL_COMPTE_NUMERO, numero);
+        values.put(COL_COMPTE_LIBELLE, libelle);
+        values.put(COL_COMPTE_SOLDE, solde);
+        db.insert(TABLE_COMPTES, null, values);
     }
 
     // Méthode privée (utilisée dans onCreate pour les données initiales)
@@ -83,10 +109,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return liste;
     }
 
+    public ArrayList<Compte> getAllComptes() {
+        ArrayList<Compte> liste = new ArrayList<>();
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_COMPTES, null);
+        while (cursor.moveToNext()) {
+            String numero = cursor.getString(cursor.getColumnIndexOrThrow(COL_COMPTE_NUMERO));
+            String libelle = cursor.getString(cursor.getColumnIndexOrThrow(COL_COMPTE_LIBELLE));
+            double solde = cursor.getDouble(cursor.getColumnIndexOrThrow(COL_COMPTE_SOLDE));
+            liste.add(new Compte(numero, libelle, solde));
+        }
+        cursor.close();
+        db.close();
+        return liste;
+    }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_TRANSACTIONS);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_COMPTES);
         onCreate(db);
     }
 }

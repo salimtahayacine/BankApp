@@ -13,4 +13,9 @@ public class Compte {
     public String getNumero() { return numero; }
     public String getLibelle() { return libelle; }
     public double getSolde() { return solde; }
+
+    @Override
+    public String toString() {
+        return libelle + " - " + solde + " MAD";
+    }
 }

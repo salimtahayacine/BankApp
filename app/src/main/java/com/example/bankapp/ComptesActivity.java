@@ -17,10 +17,10 @@ public class ComptesActivity extends AppCompatActivity {
     @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_comptes);
-        ArrayList<Compte> liste = new ArrayList<>();
-        liste.add(new Compte("0011-2233-4455-6677", "Compte courant", 8250.00));
-        liste.add(new Compte("0011-2233-4455-8899", "Compte épargne", 3700.00));
-        liste.add(new Compte("0011-2233-4455-1100", "Compte sur carnet", 500.00));
+        
+        DatabaseHelper db = new DatabaseHelper(this);
+        ArrayList<Compte> liste = db.getAllComptes();
+        
         CompteAdapter adapter = new CompteAdapter(this, liste);
         ListView lv = findViewById(R.id.lvComptes);
         lv.setAdapter(adapter);
